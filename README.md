@@ -28,7 +28,9 @@ The application consists of two main components:
 2.  **Install dependencies:**
     This project uses `uv` to manage dependencies. Make sure you have `uv` installed.
     ```bash
-    uv pip install -r requirements.txt
+    uv venv
+    source .venv/bin/activate
+    uv sync
     ```
 
 ## Running the Application
@@ -42,12 +44,18 @@ To run the application, you need to start both the backend server and the fronte
     ```
     The server will start on `http://localhost:8000`.
 
-2.  **Start the frontend web application:**
+2.  **Streamlit frontend web application:**
     Open another terminal and run the following command:
     ```bash
     streamlit run app.py
     ```
     The web application will be available at `http://localhost:8501`.
+
+3. **Google Adk web Application:**
+    ```bash
+    adk web --port 9000
+    ```
+    open the ADK web URL in the browser. Say "Hi", say an follow the prompts.  
 
 ## Testing the Application that uses MCP Servers
 
@@ -57,6 +65,7 @@ To test the application using the `adk` tool, you can use the following commands
     ```bash
     uv run mcp_server.py
     ```
+    This will start the MCP server on port 8000ß
 
 2.  **Start the frontend with `adk`:**
     ```bash
